@@ -8,6 +8,7 @@ import (
 	"github.com/daviesoyasor/fiber-tester/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/limiter"
+	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
 func main() {
@@ -22,6 +23,7 @@ func main() {
 	routes.SetUpRoutes(prefixUrl)
 
 	// === Middlewares ====
+	app.Use(recover.New())
 	app.Use(limiter.New(limiter.Config{
 		Expiration: 10 * time.Second,
 		Max:        3,
