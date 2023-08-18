@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/daviesoyasor/fiber-tester/config"
+	//"github.com/daviesoyasor/fiber-tester/config"
 	"github.com/daviesoyasor/fiber-tester/middlewares"
 	"github.com/daviesoyasor/fiber-tester/routes"
 	"github.com/gofiber/fiber/v2"
@@ -13,10 +13,10 @@ import (
 
 func main() {
 	// Define Fiber config.
-	config := config.FiberConfig()
+	//config := config.FiberConfig()
 
 	// Start a new fiber app (Initialize a fiber instance)
-	app := fiber.New(config)
+	app := fiber.New()
 
 	// Set up routes
 	prefixUrl := app.Group("/api/v1")
